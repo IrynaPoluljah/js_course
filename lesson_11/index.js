@@ -15,14 +15,38 @@ function removeKeys1(obj, arr) {
 // Написать функцию “removeKeys2”, которая вернет новый объект, 
 // у которого будут те же ключи что и у первого аргумента, исключая те названия которыe есть
 //  в массиве (втором аргументе)
-function removeKeys2(obj, arr) {
-  let newObj = obj;
-  for( let i = 0; i < arr.length; i += +1) {
-    delete obj[arr[i]]
-}
-  return newObj;
-};
 
+// function removeKeys2(obj, arr) {
+//   let newObj = {};
+
+//   for (let key in obj) {
+//       let  = false;
+
+//       for (let i = 0; i < arr.length; i++) {
+//           if (key === arr[i]) {
+//               exlcude = true;
+//               break;
+//           }
+//       }
+
+//       if (!exlcude) {
+//           newObj[key] = obj[key];
+//       }
+//   }
+//   return newObj;
+// }
+
+
+function removeKeys2(obj, arr) {
+  let newObj = {};
+
+  for (let key in obj) {
+      if (arr.indexOf(key) === -1) {
+          newObj[key] = obj[key];
+      }
+  }
+  return newObj;
+}
 
 
 // Написать функцию “absDiff”, которая принимает аргумент “a”, и возвращает функцию,
