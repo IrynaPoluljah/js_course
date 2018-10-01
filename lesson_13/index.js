@@ -110,5 +110,3 @@ function calculate () {
   console.log(resultMain);
   return resultMain;
 }
-
-calculate();
