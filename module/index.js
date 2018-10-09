@@ -105,9 +105,4 @@ function strangeSearch (array) {
     // })
 
   }
-
-  
-
 }
-
-strangeSearch(['jhsdgfj', 'jshgfjd', 'sjdhvf', 'skhdgfk']);
