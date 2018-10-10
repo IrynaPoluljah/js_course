@@ -83,26 +83,30 @@ function strangeSearch (array) {
   btn.innerText = 'Search';
   btn.id = 'go';
   parentElem.append(btn);
+  let arrInput = [];
+  let phrase = [];
 
   for(let i = 0; i < array.length; i += 1) {
-    //let field = [];
-    //let phrase = [];
     let div = document.createElement('div');
     let input = document.createElement('input');
     div.innerText = array[i];
     input.setAttribute('type', 'number');
     input.value = 0;
+    input.id = array[i];
     div.append(input);
     parentElem.append(div);
-    //fields.push(input);
+    arrInput.push(input);
+    }
 
-    // btn.addEventListener('click', () => {
-    //   fields.sort((a, b) => b.value - a.value);
-    //   for (let element of fields) {
-        
-    // }
-    //   window.location.href = `https://www.youtube.com/results?search_query=${address.join('+')}`;
-    // })
+    btn.addEventListener('click', () => {
+      for(let l = 0; l < arrInput.length; l += 1) {
 
+        if(arrInput[l].value > 0) {
+          phrase.push(arrInput[l].id);
+        }
+      }
+
+      phrase.sort((a, b) => a.value - b.value);
+      window.location.href = `https://www.youtube.com/results?search_query=${phrase.join('+')}`
+    })
   }
-}
