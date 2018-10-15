@@ -41,6 +41,7 @@ function row (a, b, c, str) {
   }
   return newArr;
 }
+row(4,6,8, '<')
 
 //  4
 
@@ -54,6 +55,8 @@ function fact (number) {
   }
   return number;
 }
+
+fact(0);
 
 
 //  5
