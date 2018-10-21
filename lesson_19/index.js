@@ -17,28 +17,31 @@
 //который выводит в консоль среднее значение из вашего массива оценок
 
 function Human (name, age) {
-  this.name = 'ivan', 
+  this.name = 'Irina', 
   this.age = 19  
 }
 
-AlevelStudent.prototype.sayHello = function () { console.log ( `Hello, my name is  ${this.name}, i am ${this.age} years old` )}
+Human.prototype.sayHello = function () { 
+  console.log ( `Hello, my name is  ${this.name}, i am ${this.age} years old` )
+}
 
 function AlevelStudent (name, age, marks) {
-  this.name = 'ivan', 
+  this.name = 'Irina', 
   this.age = 19,
-  this.marks = [5, 3, 5, 1, 4]
+  this.marks = [1, 2, 3, 4, 5]
 }
 
 let a = new AlevelStudent;
 let sum = 0;
 
-  for(let i = 0; i < a.marks.length; i += 1) {
-    sum += a.marks[i];
-  }
+for(let i = 0; i < a.marks.length; i += 1) {
+  sum += a.marks[i];
+}
 
 let res = sum / a.marks.length;
 
 AlevelStudent.prototype = Object.create(Human.prototype);
+AlevelStudent.prototype.constructor = AlevelStudent;
 
 AlevelStudent.prototype.averageMark = function () { console.log ( res )}
 
