@@ -31,17 +31,17 @@ function AlevelStudent (name, age, marks) {
   this.marks = [1, 2, 3, 4, 5]
 }
 
-let a = new AlevelStudent;
-let sum = 0;
-
-for(let i = 0; i < a.marks.length; i += 1) {
-  sum += a.marks[i];
-}
-
-let res = sum / a.marks.length;
-
-AlevelStudent.prototype = Object.create(Human.prototype);
+AlevelStudent.prototype = Object.create( Human.prototype );
 AlevelStudent.prototype.constructor = AlevelStudent;
 
-AlevelStudent.prototype.averageMark = function () { console.log ( res )}
+let res = sum / this.marks.length;
 
+AlevelStudent.prototype.averageMark = function () { 
+
+  let sum = 0;
+    for(let i = 0; i < this.marks.length; i += 1) {
+      sum += this.marks[i];
+    }
+    
+  console.log ( res ) 
+}
